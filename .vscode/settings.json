@@ -1,0 +1,7 @@
+{
+    "favorites.resources": [
+        "app\\control",
+        "app\\model",
+        "app\\lib"
+    ]
+}

@@ -1,0 +1,5 @@
+id,system_user_id,system_user_to_id,subject,message,dt_message,checked
+1,1,2,"hint 1","Hint from Administrator.","2019-09-21 14:30:33",N
+2,1,2,"Hint 2","Hint from Administrator.","2019-09-21 14:30:40",N
+3,2,1,"Requirement 1","Requirement from user","2019-09-21 14:31:01",N
+4,2,1,"Requirement 2","Requirement from user","2019-09-21 14:31:10",N

@@ -31,6 +31,8 @@ Clone o repositório ou baixe e descompacte na pasta htdocs do xammp, ou outra p
 
 Instale o <a href="https://www.postgresql.org/download/">Postgre</a>, importe o arquivo BANCO DE DADOS/BancoDeDados.backup
 
+Ou utilize o mysql do seu Xampp e importe eo arquivo BANCO DE DADOS/BancoDeDados-MYSQL.sql
+
 Modifique os arquivos "APP/database/" comunication.ini, log.ini, permission.ini e sistema.ini com sua nova conexão.
 
 OBS: caso queira, você pode alterar as conexões no model para não precisar modificar todas.

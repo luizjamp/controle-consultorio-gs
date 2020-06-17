@@ -31,7 +31,7 @@ class AgendaCalendarForm extends TPage
         $data_fim = new TDateTime('data_fim');
         $id_paciente = new TDBUniqueSearch('id_paciente', 'sistema', 'Paciente', 'id', 'nome','id asc'  );
         $id_cadastrante = new THidden('id_cadastrante');
-        $id_cadastrante->set_value(TSession::getValue('user_id'));
+        $id_cadastrante->setValue(TSession::getValue('user_id'));
     
         $comentario = new TEntry('comentario');
 

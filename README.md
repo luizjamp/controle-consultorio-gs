@@ -29,6 +29,12 @@ Windows:
 
 Clone o repositório ou baixe e descompacte na pasta htdocs do xammp, ou outra pasta pública do seu php.
 
+Instale o <a href="https://www.postgresql.org/download/">Postgre</a>, importe o arquivo BANCO DE DADOS/BancoDeDados.backup
+
+Modifique os arquivos "APP/database/" comunication.ini, log.ini, permission.ini e sistema.ini com sua nova conexão.
+
+OBS: caso queira, você pode alterar as conexões no model para não precisar modificar todas.
+
 ## Imagens do projeto
 
 
@@ -54,7 +60,6 @@ André Gasparin – [@andre-gasparin] – andre@gasparimsat.com.br
 
 Distribuído sob a Licença Pública Geral GNU (GPLv3) 
 
-[https://github.com/yourname/github-link](https://github.com/othonalberto/)
 
 ## Contributing
 

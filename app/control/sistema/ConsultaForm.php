@@ -25,7 +25,6 @@ class ConsultaForm extends TPage
         // define the form title
         $this->form->setFormTitle("Consulta");
 
-
         $id = new THidden('id');
         $data_consulta = new TDateTime('data_consulta');
         $id_medico = new THidden('id_medico');
@@ -208,17 +207,7 @@ class ConsultaForm extends TPage
         $container->add(TBreadCrumb::create(["Básico","Consulta"]));
         $container->add($this->form);
 
-
-
-
-      
-        
-
-
-
-
-
-        parent::add($container);
+          parent::add($container);
 
     }
 
@@ -252,16 +241,16 @@ class ConsultaForm extends TPage
             }); 
 
             // get the generated {PRIMARY_KEY}
-            $data->id = $object->id; 
+            //$data->id = $object->id; 
 
-            $this->form->setData($data); // fill form data
+            //$this->form->setData($data); // fill form data
             TTransaction::close(); // close the transaction
 
             /**
             // To define an action to be executed on the message close event:
             $messageAction = new TAction(['className', 'methodName']);
             **/
-
+            $this->onClear($param);
             new TMessage('info', "Registro salvo", $messageAction); 
 
         }
@@ -323,7 +312,6 @@ class ConsultaForm extends TPage
     public function onClear( $param )
     {
         $this->form->clear(true);
-
         TSession::setValue('sintomas_consulta_items', null);
         TSession::setValue('receitas_consulta_items', null);
         
@@ -332,7 +320,7 @@ class ConsultaForm extends TPage
     }
 
     public function onAddSintomasConsulta( $param )
-    {
+    {  
         try
         {
             $data = $this->form->getData();
@@ -531,6 +519,8 @@ class ConsultaForm extends TPage
 
     public function onReloadReceitasConsulta( $param )
     {
+
+    
         $items = TSession::getValue('receitas_consulta_items'); 
 
         $this->receitas_consulta_list->clear(); 
@@ -583,8 +573,8 @@ class ConsultaForm extends TPage
     public function onShow($param = null)
     {
 
-        TSession::setValue('sintomas_consulta_items', null);
-        TSession::setValue('receitas_consulta_items', null);
+       TSession::setValue('sintomas_consulta_items', null);
+       TSession::setValue('receitas_consulta_items', null);
        
         $this->onReload();
 
@@ -609,8 +599,9 @@ class ConsultaForm extends TPage
         if (!$this->loaded AND (!isset($_GET['method']) OR $_GET['method'] !== 'onReload') ) 
         { 
             $this->onReload( func_get_arg(0) );
+           
         }
-        $this->onClear($param);
+        
         parent::show();
     }
 
